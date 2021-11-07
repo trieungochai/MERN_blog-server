@@ -18,7 +18,22 @@ export const createPost = async (req, res) => {
     // Receive the data sent from client
     const post = new PostModel(newPost);
     await post.save();
-    
+
+    res.status(200).json(post);
+  } catch (err) {
+    res.status(500).json({ error: err });
+  }
+};
+
+export const updatePost = async (req, res) => {
+  try {
+    const updatePost = req.body;
+    const post = await PostModel.findOneAndUpdate(
+      { _id: updatePost._id },
+      updatePost,
+      { new: true }
+    );
+
     res.status(200).json(post);
   } catch (err) {
     res.status(500).json({ error: err });
