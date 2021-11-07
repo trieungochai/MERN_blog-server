@@ -25,4 +25,4 @@ const schema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export const Post = mongoose.model("Post", schema);
+export const PostModel = mongoose.model("Post", schema);
