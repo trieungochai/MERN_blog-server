@@ -1,3 +1,7 @@
 export const getPosts = (req, res) => {
-  res.send("Routes Successfully!");
+  res.send("Successfully routed!");
+};
+
+export const createPost = (req, res) => {
+  res.send("Successfully created!");
 };
